@@ -23,6 +23,16 @@ services:
     networks:
       - app-network
 
+  client:
+      build:
+        context: ./client
+      ports:
+        - "3000:3000"
+      volumes:
+        - ./client:/app
+      networks:
+        - app-network
+
 volumes:
   mongo-data:
 
